@@ -1,0 +1,9 @@
+[
+  {
+    "price": 2000,
+    "location": "Downtown",
+    "num_of_room_available": 2,
+    "furnished": true,
+    "preferences": "Pet-friendly, Nearby parks, Modern interior"
+  }
+]

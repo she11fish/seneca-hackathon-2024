@@ -1,0 +1,373 @@
+[
+  {
+    "house_type": "Apartment",
+    "landlord_name": "John Smith",
+    "price": 1500,
+    "address": "123 Main Street",
+    "description": "Cozy apartment with a view of the city skyline."
+  },
+  {
+    "house_type": "House",
+    "landlord_name": "Emily Johnson",
+    "price": 2500,
+    "address": "456 Oak Avenue",
+    "description": "Spacious house with a backyard and garage."
+  },
+  {
+    "house_type": "Condo",
+    "landlord_name": "Michael Brown",
+    "price": 1800,
+    "address": "789 Elm Street",
+    "description": "Modern condo in a gated community with amenities."
+  },
+  {
+    "house_type": "Townhouse",
+    "landlord_name": "Sarah Davis",
+    "price": 2000,
+    "address": "567 Maple Drive",
+    "description": "Charming townhouse with a fireplace and patio."
+  },
+  {
+    "house_type": "Studio",
+    "landlord_name": "Robert Wilson",
+    "price": 1200,
+    "address": "101 Pine Lane",
+    "description": "Bright studio with ample natural light and modern finishes."
+  },
+  {
+    "house_type": "Duplex",
+    "landlord_name": "Laura Martinez",
+    "price": 1700,
+    "address": "222 Cedar Street",
+    "description": "Renovated duplex with separate entrances for each unit."
+  },
+  {
+    "house_type": "Penthouse",
+    "landlord_name": "David Lee",
+    "price": 3500,
+    "address": "999 High Rise Avenue",
+    "description": "Luxurious penthouse with panoramic views and high-end amenities."
+  },
+  {
+    "house_type": "Cottage",
+    "landlord_name": "Jennifer Adams",
+    "price": 1800,
+    "address": "777 Lakeview Road",
+    "description": "Quaint cottage with lakefront access and a private dock."
+  },
+  {
+    "house_type": "Bungalow",
+    "landlord_name": "Mark Thompson",
+    "price": 2200,
+    "address": "321 Sunset Boulevard",
+    "description": "Classic bungalow with a wraparound porch and garden."
+  },
+  {
+    "house_type": "Villa",
+    "landlord_name": "Sophia Garcia",
+    "price": 4000,
+    "address": "888 Ocean View Terrace",
+    "description": "Majestic villa overlooking the sea with a swimming pool."
+  },
+  {
+    "house_type": "Loft",
+    "landlord_name": "Daniel Moore",
+    "price": 1900,
+    "address": "444 Loft Avenue",
+    "description": "Industrial-style loft with exposed brick walls and high ceilings."
+  },
+  {
+    "house_type": "Mansion",
+    "landlord_name": "Olivia Robinson",
+    "price": 6000,
+    "address": "555 Grand Estate Lane",
+    "description": "Grand mansion with sprawling grounds, guest house, and tennis court."
+  },
+  {
+    "house_type": "Apartment",
+    "landlord_name": "Rachel Clark",
+    "price": 1600,
+    "address": "213 River Road",
+    "description": "Modern apartment with river views and access to amenities."
+  },
+  {
+    "house_type": "House",
+    "landlord_name": "Matthew Turner",
+    "price": 2800,
+    "address": "789 Mountain Avenue",
+    "description": "Stunning house nestled in the mountains with scenic views."
+  },
+  {
+    "house_type": "Condo",
+    "landlord_name": "Jessica White",
+    "price": 2000,
+    "address": "456 Sunset Boulevard",
+    "description": "Luxury condo with beachfront access and resort-style living."
+  },
+  {
+    "house_type": "Townhouse",
+    "landlord_name": "Andrew Carter",
+    "price": 2100,
+    "address": "321 Oak Lane",
+    "description": "Modern townhouse with a rooftop terrace and city views."
+  },
+  {
+    "house_type": "Studio",
+    "landlord_name": "Stephanie Hall",
+    "price": 1300,
+    "address": "101 Broadway",
+    "description": "Chic studio apartment in the heart of downtown."
+  },
+  {
+    "house_type": "Duplex",
+    "landlord_name": "Patrick Murphy",
+    "price": 1800,
+    "address": "222 Maple Street",
+    "description": "Updated duplex with hardwood floors and a fenced yard."
+  },
+  {
+    "house_type": "Penthouse",
+    "landlord_name": "Karen Phillips",
+    "price": 3800,
+    "address": "999 Skyline Drive",
+    "description": "Exclusive penthouse with private elevator and rooftop terrace."
+  },
+  {
+    "house_type": "Cottage",
+    "landlord_name": "Timothy Scott",
+    "price": 1900,
+    "address": "777 Beach Road",
+    "description": "Quaint cottage with ocean views and a cozy fireplace."
+  },
+  {
+    "house_type": "Bungalow",
+    "landlord_name": "Rebecca Evans",
+    "price": 2300,
+    "address": "321 Lakeview Drive",
+    "description": "Renovated bungalow with a screened porch and garden."
+  },
+  {
+    "house_type": "Villa",
+    "landlord_name": "Gregory Sanchez",
+    "price": 4500,
+    "address": "888 Hilltop Avenue",
+    "description": "Elegant villa with expansive grounds and a private pool."
+  },
+  {
+    "house_type": "Loft",
+    "landlord_name": "Natalie Baker",
+    "price": 2000,
+    "address": "444 Warehouse Street",
+    "description": "Spacious loft with industrial-chic design and exposed beams."
+  },
+  {
+    "house_type": "Mansion",
+    "landlord_name": "William King",
+    "price": 6500,
+    "address": "555 Lakeside Drive",
+    "description": "Grand mansion with waterfront views and a boathouse."
+  },
+  {
+    "house_type": "Apartment",
+    "landlord_name": "Laura Harris",
+    "price": 1700,
+    "address": "213 Park Avenue",
+    "description": "Bright and airy apartment in a tree-lined neighborhood."
+  },
+  {
+    "house_type": "House",
+    "landlord_name": "Eric Turner",
+    "price": 3000,
+    "address": "789 Forest Road",
+    "description": "Classic house with a spacious yard and mature trees."
+  },
+  {
+    "house_type": "Condo",
+    "landlord_name": "Michelle Lee",
+    "price": 2200,
+    "address": "456 Ocean Drive",
+    "description": "Modern condo with ocean views and resort-style amenities."
+  },
+  {
+    "house_type": "Apartment",
+    "landlord_name": "Jessica Parker",
+    "price": 1700,
+    "address": "321 Elm Street",
+    "description": "Modern apartment with city views and gym access."
+  },
+  {
+    "house_type": "House",
+    "landlord_name": "Michael Johnson",
+    "price": 2800,
+    "address": "789 Oak Avenue",
+    "description": "Beautiful house with a garden and swimming pool."
+  },
+  {
+    "house_type": "Condo",
+    "landlord_name": "Sophie Anderson",
+    "price": 2000,
+    "address": "456 Maple Drive",
+    "description": "Luxury condo with waterfront views and spa facilities."
+  },
+  {
+    "house_type": "Townhouse",
+    "landlord_name": "David Brown",
+    "price": 2200,
+    "address": "567 Pine Lane",
+    "description": "Modern townhouse with rooftop terrace and barbecue area."
+  },
+  {
+    "house_type": "Studio",
+    "landlord_name": "Emily Wilson",
+    "price": 1300,
+    "address": "101 Cedar Street",
+    "description": "Cozy studio apartment with high ceilings and natural light."
+  },
+  {
+    "house_type": "Duplex",
+    "landlord_name": "Daniel Martinez",
+    "price": 1800,
+    "address": "222 Sunset Boulevard",
+    "description": "Renovated duplex with spacious rooms and private backyard."
+  },
+  {
+    "house_type": "Penthouse",
+    "landlord_name": "Olivia Davis",
+    "price": 3800,
+    "address": "999 Lakeview Road",
+    "description": "Luxurious penthouse with panoramic city views and rooftop pool."
+  },
+  {
+    "house_type": "Cottage",
+    "landlord_name": "William Adams",
+    "price": 1900,
+    "address": "777 Beach Avenue",
+    "description": "Quaint cottage with oceanfront location and beach access."
+  },
+  {
+    "house_type": "Bungalow",
+    "landlord_name": "Sophia Thompson",
+    "price": 2400,
+    "address": "321 River Lane",
+    "description": "Classic bungalow with large backyard and outdoor entertainment area."
+  },
+  {
+    "house_type": "Villa",
+    "landlord_name": "Lucas Garcia",
+    "price": 4500,
+    "address": "888 Hillside Drive",
+    "description": "Stunning villa with expansive grounds, pool, and tennis court."
+  },
+  {
+    "house_type": "Loft",
+    "landlord_name": "Emma Moore",
+    "price": 2100,
+    "address": "444 Loft Lane",
+    "description": "Industrial-style loft with exposed brick walls and modern amenities."
+  },
+  {
+    "house_type": "Mansion",
+    "landlord_name": "Jacob Robinson",
+    "price": 7000,
+    "address": "555 Mansion Avenue",
+    "description": "Grand mansion with luxurious interiors, theater room, and guest house."
+  },
+  {
+    "house_type": "Apartment",
+    "landlord_name": "Sophia Harris",
+    "price": 1800,
+    "address": "213 Park Boulevard",
+    "description": "Spacious apartment with balcony and city skyline views."
+  },
+  {
+    "house_type": "House",
+    "landlord_name": "Adam Turner",
+    "price": 3200,
+    "address": "789 Forest Lane",
+    "description": "Elegant house with landscaped garden, pool, and outdoor kitchen."
+  },
+  {
+    "house_type": "Condo",
+    "landlord_name": "Isabella Lee",
+    "price": 2300,
+    "address": "456 Ocean View Drive",
+    "description": "Modern condo with ocean views and resort-style amenities."
+  },
+  {
+    "house_type": "Townhouse",
+    "landlord_name": "Andrew White",
+    "price": 2400,
+    "address": "321 Pine Street",
+    "description": "Contemporary townhouse with rooftop deck and city skyline views."
+  },
+  {
+    "house_type": "Studio",
+    "landlord_name": "Ethan Hall",
+    "price": 1400,
+    "address": "101 Broadway Avenue",
+    "description": "Chic studio apartment with stylish decor and central location."
+  },
+  {
+    "house_type": "Duplex",
+    "landlord_name": "Ava Murphy",
+    "price": 1900,
+    "address": "222 Maple Lane",
+    "description": "Updated duplex with hardwood floors and private patio."
+  },
+  {
+    "house_type": "Penthouse",
+    "landlord_name": "Mia Phillips",
+    "price": 4000,
+    "address": "999 Skyline Boulevard",
+    "description": "Exclusive penthouse with panoramic city views and rooftop terrace."
+  },
+  {
+    "house_type": "Cottage",
+    "landlord_name": "Logan Scott",
+    "price": 2000,
+    "address": "777 Lakefront Drive",
+    "description": "Cozy cottage with lakefront views and private dock."
+  },
+  {
+    "house_type": "Bungalow",
+    "landlord_name": "Chloe Evans",
+    "price": 2500,
+    "address": "321 Sunset Avenue",
+    "description": "Renovated bungalow with landscaped garden and outdoor seating."
+  },
+  {
+    "house_type": "Villa",
+    "landlord_name": "Jackson Sanchez",
+    "price": 4800,
+    "address": "888 Ocean Drive",
+    "description": "Luxurious villa with private beach access and infinity pool."
+  },
+  {
+    "house_type": "Loft",
+    "landlord_name": "Madison Baker",
+    "price": 2200,
+    "address": "444 Warehouse Lane",
+    "description": "Spacious loft with industrial-chic design and exposed beams."
+  },
+  {
+    "house_type": "Mansion",
+    "landlord_name": "Charlotte King",
+    "price": 7500,
+    "address": "555 Grand Estate Boulevard",
+    "description": "Grand mansion with sprawling grounds, pool, and tennis court."
+  },
+  {
+    "house_type": "Apartment",
+    "landlord_name": "Noah Harris",
+    "price": 1900,
+    "address": "213 River Lane",
+    "description": "Modern apartment with river views and access to amenities."
+  },
+  {
+    "house_type": "House",
+    "landlord_name": "Ava Turner",
+    "price": 3400,
+    "address": "789 Mountain Drive",
+    "description": "Stunning house nestled in the mountains with panoramic views."
+  }
+]
