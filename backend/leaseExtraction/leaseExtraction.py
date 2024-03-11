@@ -4,6 +4,8 @@ import pytesseract
 import cohere
 from dotenv import load_dotenv
 import os
+import string
+import json
 
 load_dotenv()
 api_key = os.getenv("COHERE_API_KEY")
@@ -43,10 +45,61 @@ if fields["Services On Site Laundry Pay Per Use"]["/V"] == "/Yes":
 else:
     cleaned["services_and_utilities_provided"].append("Free Laundry")
 
+pages = []
+for x in reader.pages[7:12]:
+    pages.extend(x.extract_text().split("\n"))
+result = []
+while i < len(pages):
+    if pages[i][0] in string.ascii_uppercase[1:] and pages[i][1] == ".":
+        print("ADDING")
+        
+        com = (pages[i+1] + pages[i+2]).strip()
+        
+        first = com.find(".")
+        second = com.find(".", first + 1)
+        if second == -1:
+            result.append(com[:first+1])
+        else: 
+            if second > 100:
+                result.append(com[:second+1])
+            else:
+                result.append(com[:com.find(".", second+1)])
+        i+=2
+    else:
+        i+=1
+result.reverse()
+cleaned["tenant_and_landlord_responsibility"] = result
+json_data = json.dumps(cleaned, indent=4)
 
-for key, value in cleaned.items():
-    if value = ""
-    print(f"{key}: {value} ")
+# Write JSON data to a file
+with open("data.json", "w") as json_file:
+    json_file.write(json_data)
+        
+# for y in result:
+#     print(y)
+# summaries = []
+# response = co.summarize( 
+#         text=reader.pages[11].extract_text(),
+#         length='short',
+#     format='paragraph',
+#     model='summarize-xlarge',
+#     additional_command='',
+#     temperature=0.3)
+# print(response.summary)
+# for x in reader.pages:
+    
+#         ) 
+# print(summaries)
+
+# response = co.summarize(
+#   model="command",
+#   message="What is the tenan name",
+#   prompt_truncation="AUTO")
+# for i in reader.pages[te]
+# print(reader.pages[10].extract_text())
+# for key, value in cleaned.items():
+#     # if value = ""
+#     print(f"{key}: {value} ")
 # for key, value in reader.get_fields().items():
 #     print(key, value)
 
@@ -60,15 +113,10 @@ for key, value in cleaned.items():
 #     # extracting text from page 
 #     text = page.extract_text() 
 #     print(text) 
-    
-# co.chat(
-#   model="command",
-#   message="What is the landlord name",
-#   documents=[{"title": f"User's lease Agreement page {i}", "snippet": reader.pages[i].extract_text()} for i in range(n)])
-# response = co.chat(
-#   model="command",
-#   message="What is the tenan name",
-#   prompt_truncation="AUTO",
-#   documents=[{"title":key,"snippet": str(value)} for key, value in reader.get_fields().items()])
 
-# print(response.text)
+# for i in range(7, 12):
+#     response = co.chat(
+#     model="command",
+#     message="What are the responsibility of the tenants, be specific as what listed on the document",
+#     documents=[{"title": f"User's lease Agreement page {i}", "snippet": reader.pages[i].extract_text()}])
+#     print(response.text)
