@@ -1,8 +1,7 @@
-import { Chat, MessageType } from '@flyerhq/react-native-chat-ui';
+import { Chat, MessageType, darkTheme } from '@flyerhq/react-native-chat-ui';
 import { useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Button, Text, XStack } from 'tamagui';
-import { Container } from '~/tamagui.config';
 
 const uuidv4 = () => {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
@@ -11,7 +10,6 @@ const uuidv4 = () => {
     return v.toString(16);
   });
 };
-
 export default function TabTwoScreen() {
   const [messages, setMessages] = useState<MessageType.Any[]>([
     {
@@ -40,12 +38,12 @@ export default function TabTwoScreen() {
   };
   return (
     <SafeAreaProvider>
-      <XStack backgroundColor="white" justifyContent="space-evenly">
+      <XStack backgroundColor="#1f1c38" pt={30} justifyContent="space-evenly">
         <Button backgroundColor="$blue10">
-          <Text>Recommendation</Text>
+          <Text color="white">Recommendation</Text>
         </Button>
         <Button backgroundColor="$blue10">
-          <Text>Tutorial</Text>
+          <Text color="white">Tutorial</Text>
         </Button>
       </XStack>
       <Chat
@@ -53,6 +51,9 @@ export default function TabTwoScreen() {
         renderCustomMessage={() => null}
         onSendPress={handleSendPress}
         user={user}
+        theme={{
+          ...darkTheme,
+        }}
       />
     </SafeAreaProvider>
   );

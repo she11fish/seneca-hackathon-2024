@@ -22,20 +22,6 @@ export default function TabLayout() {
           title: 'Home',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerShown: false,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color="gray"
-                    style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
         }}
       />
       <Tabs.Screen
@@ -45,11 +31,34 @@ export default function TabLayout() {
           headerTitle: 'Chatbot',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerLeft: () => (
-            <Link href="/modal" asChild>
+            <Link href="/" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name="long-arrow-left"
+                    name="home"
+                    size={25}
+                    width="100%"
+                    color="black"
+                    style={[styles.headerLeft, { opacity: pressed ? 0.5 : 1 }]}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="lease-extraction"
+        options={{
+          title: 'Lease Extraction',
+          headerTitle: 'Lease Extraction',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerLeft: () => (
+            <Link href="/" asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name="home"
                     size={25}
                     width="100%"
                     color="black"
