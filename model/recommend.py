@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 import cohere
 import os
 import orjson
+import json
+import ast
 
 # load .env file
 load_dotenv()
@@ -38,10 +40,19 @@ for query in house_queries:
 # convert user input to one string
 user_input = str(user_query)
 
+# run cohere rerank to find the recommended listing
 result = co.rerank(query=user_input, documents=docs, top_n=5, model='rerank-multilingual-v2.0')
 
-for idx, r in enumerate(result):
-    print(f"Document Rank: {idx + 1}, Document Index: {r.index}")
-    print(f"Document: {r.document['text']}")
-    print(f"Relevance Score: {r.relevance_score:.2f}")
-    print("\n")
+json_array = [ast.literal_eval(r.document['text'])for idx, r in enumerate(result)]
+
+# output json objects to json file
+with open("recommend.json", "w") as output_file:
+    json.dump(json_array, output_file)
+
+# for idx, r in enumerate(result):
+#     # print(f"Document Rank: {idx + 1}, Document Index: {r.index}")
+#     # print(f"Document: {r.document['text']}")
+#     # print(f"Relevance Score: {r.relevance_score:.2f}")
+#     # print("\n")
+
+
