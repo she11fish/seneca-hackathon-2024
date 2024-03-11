@@ -1,4 +1,3 @@
-import spacy
 from flair.data import Sentence
 from flair.models import SequenceTagger
 from segtok.segmenter import split_single
