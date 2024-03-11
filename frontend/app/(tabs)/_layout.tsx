@@ -70,6 +70,29 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="recommendation"
+        options={{
+          title: 'Lease Recommendation',
+          headerTitle: 'Lease Recommendation',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerLeft: () => (
+            <Link href="/" asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name="home"
+                    size={25}
+                    width="100%"
+                    color="black"
+                    style={[styles.headerLeft, { opacity: pressed ? 0.5 : 1 }]}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
     </Tabs>
   );
 }
