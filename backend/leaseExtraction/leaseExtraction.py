@@ -1,17 +1,13 @@
 from pypdf import PdfReader 
-from PIL import Image
-from dotenv import load_dotenv
-import os
 import string
 import json
-
 
 def extract(path):
     reader = PdfReader(path)
     fields = reader.get_fields()
     # print(reader.get_fields().keys())
     cleaned = {}
-    cleaned["landlord_name"] = fields["Landlords Legal Name"]["/V"]
+    cleaned["landlord_name"] = fields["Landlords Legal Name"]["/V"].strip()
     cleaned["landlord_company"] = fields["Landlords Legal Name"]["/DV"]
     tenants_first_name = [fields[f"First Name Tenant {i}"]["/V"] for i in range(1, 5)]
     tenants_last_name = [fields[f"Last Name Tenant {i}"]["/V"] for i in range(1, 5)]
@@ -20,14 +16,13 @@ def extract(path):
         if len(name) > 5:
             cleaned[f"Tenant {i+1} Name"] = name
 
-    cleaned["rental address"] = f"{fields["Rental Unit Street Number"]["/DV"]} {fields["Rental Unit Street Name"]["/DV"]}, {fields["Rental Unit CityTown"]["/DV"]}, {fields["Rental Unit Postal Code"]["/DV"]}"
-    cleaned["landlord_email"] = fields["Email address for Landlord"]["/DV"]
+    cleaned["rental address"] = f"{fields['Rental Unit Street Number']['/DV']} {fields['Rental Unit Street Name']['/DV']}, {fields['Rental Unit CityTown']['/DV']}, {fields['Rental Unit Postal Code']['/DV']}"
     cleaned["tenant_email"] = fields["Email address for Tenants"]["/V"]
     cleaned["Phone number for emergencies or day to day"] = fields["Phone number for emergencies or day to day"]["/DV"]
     cleaned["date_tenancy_begins"] = fields["Date Tenancy Begins"]["/V"]
     cleaned["date_tenancy_ends"] = fields["Date Tenancy Ends"]["/V"]
     cycle = "month" if fields["time rent paid"]["/V"] == "/Choice1" else fields["other eg weekly"]["/V"]
-    cleaned["how_to_pay_rent"] = f"{fields["date rent due on"]["/TU"]} {fields["date rent due on"]["/DV"]} day of each {cycle}"
+    cleaned["how_to_pay_rent"] = f'{fields["date rent due on"]["/TU"]} {fields["date rent due on"]["/DV"]} day of each {cycle}'
     cleaned["parking rent"] =  0 if fields["Parking rent"]["/V"] == '' else int(fields["Parking rent"]["/V"])
     cleaned["base rent"] = int(fields["Base rent"]["/V"][1:])
     cleaned["deposit amount"] = int(fields["rent deposit amount"]["/V"])
@@ -48,9 +43,7 @@ def extract(path):
     while i < len(pages):
         if pages[i][0] in string.ascii_uppercase[1:] and pages[i][1] == ".":
             print("ADDING")
-            
             com = (pages[i+1] + pages[i+2]).strip()
-            
             first = com.find(".")
             second = com.find(".", first + 1)
             if second == -1:

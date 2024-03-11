@@ -1,0 +1,6 @@
+pypdf
+cohere
+python-dotenv
+flask
+flair
+openai
