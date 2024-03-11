@@ -1,7 +1,7 @@
 import LeaseExtractionInfo from '~/components/LeaseExtractionInfo';
 
-const recommendation = () => {
+const LeaseSummary = () => {
   return <LeaseExtractionInfo />;
 };
 
-export default recommendation;
+export default LeaseSummary;

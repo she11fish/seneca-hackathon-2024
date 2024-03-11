@@ -16,3 +16,11 @@ export interface LeaseExtraction {
   services_and_utilities_provided: string[];
   tenant_and_landlord_responsibility: string[];
 }
+
+export interface MainData {
+  recommend: boolean;
+  message: string;
+  recommendation?: Recommendation;
+}
+
+export interface Recommendation {}

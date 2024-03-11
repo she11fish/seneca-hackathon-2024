@@ -1,5 +1,5 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
+import { Link, Tabs, router } from 'expo-router';
 import { Pressable, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
 import { Image } from 'tamagui';
 
@@ -71,10 +71,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="recommendation"
+        name="lease-summary"
         options={{
-          title: 'Lease Recommendation',
-          headerTitle: 'Lease Recommendation',
+          title: 'Lease Summary',
+          headerTitle: 'Lease Summary',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerLeft: () => (
             <Link href="/" asChild>
