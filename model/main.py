@@ -15,20 +15,19 @@ with open('example_user_queries.json') as user_file:
     user_input = user_file.read()
 # load tenant posting data json
 with open('example_posting.json') as data_file:
-    houses_input = data_file.read()
+    houses_data = data_file.read()
 
 # parse json data sets
 user_query = orjson.loads(user_input)
-houses = orjson.loads(houses_input)
+houses = orjson.loads(houses_data)
 
-user_pref = user_query[0].get('preferences')
-
-# extract houses description
 docs = []
 for house in houses:
-    docs.append(house.get('description'))
+    docs.append(str(house))
 
-results = co.rerank(query=user_pref, documents=docs, top_n=3, model='rerank-english-v2.0')
+user_input = str(user_query[0])
+
+results = co.rerank(query=user_input, documents=docs, top_n=3, model='rerank-english-v2.0')
 
 for idx, r in enumerate(results):
     print(f"Document Rank: {idx + 1}, Document Index: {r.index}")

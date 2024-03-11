@@ -1,9 +1,9 @@
 [
   {
-    "price": 2000,
-    "location": "Downtown",
-    "num_of_room_available": 2,
+    "price": 1000,
+    "location": "Mississauga",
+    "num_of_room_available": 1,
     "furnished": true,
-    "preferences": "Pet-friendly, Nearby parks, Modern interior"
+    "preferences": "Pet-friendly and car park"
   }
 ]
