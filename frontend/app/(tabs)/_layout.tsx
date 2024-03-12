@@ -71,10 +71,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="lease-summary"
+        name="recommendation"
         options={{
-          title: 'Lease Summary',
-          headerTitle: 'Lease Summary',
+          title: 'Lease Recommendation',
+          headerTitle: 'Lease Recommendation',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerLeft: () => (
             <Link href="/" asChild>

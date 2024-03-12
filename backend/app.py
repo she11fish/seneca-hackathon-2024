@@ -43,11 +43,12 @@ def get_least_extraction():
     global extraction
     return extraction
 
-@app.route('/get_response', methods=['GET'])
+@app.route('/get_response', methods=['POST'])
 def get_response():
     global preferences
     global current_topic
-    user_input = request.form["chat"]
+    user_input = json.loads(list(request.form)[0])["chat"]
+    print(user_input)
     global count
     print(count)
     global needed_info

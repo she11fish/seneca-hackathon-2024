@@ -45,7 +45,6 @@ export default function LeaseExtractionInfo() {
     <Container>
       <ScrollView>
         <View m={0} p={0}>
-          <H2 color="white">Lease Summary</H2>
           <View mt={10}>
             {Object.entries(lease).map(([key, value]) => (
               <View key={key} m={0} p={0}>

@@ -23,4 +23,19 @@ export interface MainData {
   recommendation?: Recommendation;
 }
 
-export interface Recommendation {}
+export interface Recommendation {
+  price: number;
+  house_type: string;
+  landlord_name: string;
+  furnished: boolean;
+  num_of_room_availables: number;
+  description: string;
+  location: string;
+  image: Image;
+  label: number;
+}
+
+interface Image {
+  mime: string;
+  data: string;
+}
