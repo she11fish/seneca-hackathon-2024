@@ -1,8 +1,27 @@
 from pypdf import PdfReader 
 import string
 import json
+import os
+from dotenv import load_dotenv
+from openai import OpenAI
+load_dotenv()
+client = OpenAI(api_key= os.getenv("GPT_API_KEY"))
 
-def extract(path):
+def extract_features(client, input):
+# Call the OpenAI API to generate completions
+    response = client.completions.create(
+        model="gpt-3.5-turbo-instruct",
+        prompt= "Put it in a numbered list with very minimal words. " + input,
+        max_tokens=150,
+        temperature=0
+        
+    )
+    generated_text = response.choices[0].text
+    return generated_text
+
+
+
+def extract(client, path):
     reader = PdfReader(path)
     fields = reader.get_fields()
     # print(reader.get_fields().keys())
@@ -17,7 +36,7 @@ def extract(path):
             cleaned[f"Tenant {i+1} Name"] = name
 
     cleaned["rental address"] = f"{fields['Rental Unit Street Number']['/DV']} {fields['Rental Unit Street Name']['/DV']}, {fields['Rental Unit CityTown']['/DV']}, {fields['Rental Unit Postal Code']['/DV']}"
-    cleaned["tenant_email"] = fields["Email address for Tenants"]["/V"]
+    cleaned["tenant_email"] = fields["Email address for Tenants"]["/V"].strip()
     cleaned["Phone number for emergencies or day to day"] = fields["Phone number for emergencies or day to day"]["/DV"]
     cleaned["date_tenancy_begins"] = fields["Date Tenancy Begins"]["/V"]
     cleaned["date_tenancy_ends"] = fields["Date Tenancy Ends"]["/V"]
@@ -42,7 +61,6 @@ def extract(path):
     result = []
     while i < len(pages):
         if pages[i][0] in string.ascii_uppercase[1:] and pages[i][1] == ".":
-            print("ADDING")
             com = (pages[i+1] + pages[i+2]).strip()
             first = com.find(".")
             second = com.find(".", first + 1)
@@ -57,9 +75,16 @@ def extract(path):
         else:
             i+=1
     result.reverse()
+    result = "\n".join(result)
+    # print(result)
+    result = extract_features(client, result)
+    # print(result)
     cleaned["tenant_and_landlord_responsibility"] = result
     json_data = json.dumps(cleaned, indent=4)
     return json_data
+
+
+
 # Write JSON data to a file
 # with open("data.json", "w") as json_file:
 #     json_file.write(json_data)
@@ -109,3 +134,5 @@ def extract(path):
 #     message="What are the responsibility of the tenants, be specific as what listed on the document",
 #     documents=[{"title": f"User's lease Agreement page {i}", "snippet": reader.pages[i].extract_text()}])
 #     print(response.text)
+
+# print(extract(client, "sampleDocument/standardleaseontario.pdf"))

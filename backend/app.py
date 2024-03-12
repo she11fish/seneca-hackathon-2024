@@ -1,6 +1,6 @@
 from flask import Flask, request
 import os
-# from leaseExtraction.leaseExtraction import extract
+from leaseExtraction.leaseExtraction import extract
 from dotenv import load_dotenv
 import os
 from openai import OpenAI
@@ -34,11 +34,12 @@ def upload_file():
         filename = file.filename
         path = os.path.join("./userFile/", filename)
         file.save(path)
-        extraction = extract(path)
+        extraction = extract(client, path)
         return 'File uploaded successfully'
 
 @app.route('/extract', methods=['GET'])
 def get_least_extraction():
+    return extract(client, "leaseExtraction/sampleDocument/standardleaseontario.pdf")
     global extraction
     return extraction
 
