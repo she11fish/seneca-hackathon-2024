@@ -12,11 +12,11 @@ def named_entity_extraction(string):
         for entity in sent.get_spans("ner"):
             tag = entity.tag
             if tag == "GPE":
-                result["location"] = entity.text
+                result["location"] = [entity.text]
             elif tag == "MONEY":
-                result["budget"] = int(re.search(r'\d+', entity.text).group())
+                result["price"] = [int(re.search(r'\d+', entity.text).group())]
             elif tag == "CARDINAL":
-                result["rooms_needed"] = 1 if entity.text == "one" else 2
+                result["num_of_room_availables"] = [1] if entity.text == "one" else [2]
     return result
 
 # print(named_entity_extraction("I want to rent in Mississauga for under 1000 dollars. I prefer a condo with one room available. I have a pet and also I want to park my car."))
