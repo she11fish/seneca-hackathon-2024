@@ -12,7 +12,7 @@ def recommend(dct):
         data = json.load(file)
     
     raw_data = pd.DataFrame(data)
-    cleaned_data = [{k: v for k, v in d.items() if k not in ['images', 'landlord_name']} for d in data]
+    cleaned_data = [{k: v for k, v in d.items() if k not in ['image', 'landlord_name']} for d in data]
     df = pd.DataFrame(cleaned_data)
     print(df.head())
         
