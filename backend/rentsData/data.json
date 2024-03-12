@@ -1,0 +1,112 @@
+[
+    {
+        "price": 1800,
+        "house_type": "Apartment",
+        "landlord_name": "Emily Johnson",
+        "furnished": true,
+        "num_of_room_availables": 2,
+        "description": "Modern apartment with stunning views of the city skyline. Located in the heart of downtown Mississauga.",
+        "location": "123 Elm Street, Mississauga, ON",
+        "images": ["apartment_image1.jpg", "apartment_image2.jpg"],
+        "label":1
+    },
+    {
+        "price": 2500,
+        "house_type": "House",
+        "landlord_name": "David Smith",
+        "furnished": false,
+        "num_of_room_availables": 3,
+        "description": "Spacious house with a large backyard, perfect for families. Close to schools and parks.",
+        "location": "456 Maple Avenue, Mississauga, ON",
+        "images": ["house_image1.jpg", "house_image2.jpg", "house_image3.jpg"],
+        "label":2
+    },
+    {
+        "price": 1500,
+        "house_type": "Condo",
+        "landlord_name": "Jessica Lee",
+        "furnished": true,
+        "num_of_room_availables": 1,
+        "description": "Allow pets and included free parking",
+        "location": "789 Oak Street, Mississauga, ON",
+        "images": ["condo_image1.jpg", "condo_image2.jpg"],
+        "label":3
+    },
+    {
+        "price": 2000,
+        "house_type": "Apartment",
+        "landlord_name": "Michael Brown",
+        "furnished": false,
+        "num_of_room_availables": 1,
+        "description": "Bright and spacious apartment in a quiet neighborhood. Close to public transit and shopping centers.",
+        "location": "101 Pine Street, Toronto, ON",
+        "images": ["apartment_image3.jpg", "apartment_image4.jpg"],
+        "label":4
+    },
+    {
+        "price": 2800,
+        "house_type": "House",
+        "landlord_name": "Sarah Miller",
+        "furnished": true,
+        "num_of_room_availables": 4,
+        "description": "Beautiful family home with a backyard oasis. Conveniently located near schools and recreational facilities.",
+        "location": "202 Cedar Avenue, Mississauga, ON",
+        "images": ["house_image4.jpg", "house_image5.jpg", "house_image6.jpg"],
+        "label":5
+    },
+    {
+        "price": 1700,
+        "house_type": "Condo",
+        "landlord_name": "Daniel Wilson",
+        "furnished": true,
+        "num_of_room_availables": 2,
+        "description": "Modern condo with high-end finishes. Access to fitness center and rooftop terrace.",
+        "location": "303 Birch Street, Mississauga, ON",
+        "images": ["condo_image3.jpg", "condo_image4.jpg"],
+        "label":6
+    },
+    {
+        "price": 2200,
+        "house_type": "House",
+        "landlord_name": "Olivia Garcia",
+        "furnished": false,
+        "num_of_room_availables": 3,
+        "description": "Charming house with a spacious backyard and deck. Perfect for outdoor entertaining.",
+        "location": "404 Oakwood Drive, Waterloo, ON",
+        "images": ["house_image7.jpg", "house_image8.jpg", "house_image9.jpg"],
+        "label":7
+    },
+    {
+        "price": 1900,
+        "house_type": "Apartment",
+        "landlord_name": "Ethan Martinez",
+        "furnished": true,
+        "num_of_room_availables": 1,
+        "description": "Luxurious apartment with floor-to-ceiling windows and access to on-site amenities.",
+        "location": "505 Maple Lane, Toronto, ON",
+        "images": ["apartment_image5.jpg", "apartment_image6.jpg"],
+        "label":8
+    },
+    {
+        "price": 2600,
+        "house_type": "Townhouse",
+        "landlord_name": "Sophia Brown",
+        "furnished": false,
+        "num_of_room_availables": 3,
+        "description": "Modern townhouse with a spacious layout. Conveniently located near shopping and entertainment.",
+        "location": "606 Cedar Street, Mississauga, ON",
+        "images": ["townhouse_image1.jpg", "townhouse_image2.jpg", "townhouse_image3.jpg"],
+        "label":9
+    },
+    {
+        "price": 1600,
+        "house_type": "Apartment",
+        "landlord_name": "Noah Taylor",
+        "furnished": false,
+        "num_of_room_availables": 1,
+        "description": "Compact apartment with a balcony overlooking the city. Close to public transportation.",
+        "location": "707 Birch Avenue, Mississauga, ON",
+        "images": ["apartment_image7.jpg", "apartment_image8.jpg"],
+        "label":10
+    }
+]

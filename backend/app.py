@@ -1,13 +1,13 @@
 from flask import Flask, request
 import os
 # from leaseExtraction.leaseExtraction import extract
-import gpt
 from dotenv import load_dotenv
 import os
 from openai import OpenAI
 from tutorial.resources import *
 from gpt import *
 from ner import *
+from recommend_from_scratch import *
 app = Flask(__name__)
 
 
@@ -19,7 +19,6 @@ preferences={}
 needed_info = None
 
 client = OpenAI(api_key=os.getenv("GPT_API_KEY"))
-
 extraction = ""
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -49,12 +48,14 @@ def get_response():
     global current_topic
     user_input = request.form["chat"]
     global count
+    print(count)
     global needed_info
     message = ""
+    topic_response = topic(client, user_input)
+    print(current_topic, topic_response)
     if count == 0:
         message = "Welcome to Lease! Are you interested in discussing housing preferences or learning about lease tutorials?"
-    elif count == 1:
-        topic_response = topic(user_input)
+    elif count == 1 or (current_topic=="tutorial" and topic_response == "0"):
         if topic_response == "0":
             message = "Okay, what's your housing preference (Change this prompt later)."
             current_topic = "recommend"
@@ -71,24 +72,28 @@ def get_response():
     elif current_topic == "recommend":
         if needed_info is None:
             preferences = named_entity_extraction(user_input)
-            preferences["preferences"] = extract_features(client, user_input)
-            if preferences.get("house_type") == -1:
-                message = "What type of building do you prefer"
-                needed_info = "building_type"
-            elif preferences.get("furnished") == -1:
+            preferences["description"] = [extract_features(client, user_input)]
+            if "house_type" not in preferences:
+                message = "What type of house do you prefer"
+                needed_info = "house_type"
+            elif "furnished" not in preferences:
                 message = "Do you prefer furnished or non-furnished?"
-                needed_info = "building_type"   # TODO Add more checks
+                needed_info = "house_type"   # TODO Add more checks
         elif needed_info == "house_type":
-            preferences["house_type"] = user_input
+            preferences["house_type"] = [user_input]
+            if "furnished" not in preferences:
+                message = "Do you prefer furnished or non-furnished?"
+                needed_info = "furnished"   # TODO Add more checks
         elif needed_info == "furnished":
-            preferences["furnished"] = True if user_input.lower().strip() == "yes" else False
+            preferences["furnished"] = [False] if "non" in user_input.lower().strip() else [True]
+
         if len(preferences) == 6:
-            recommended_listings = {} # TODO Integrate this with hwey's function
+            recommended_listings = recommend(preferences) # TODO Integrate this with hwey's function
             return {"message":"Great! let me find the perfect listing for you", "recommend":True, "recommendations":recommended_listings}
     else:
         message = gpt_tutorial(client, user_input)
+    count+=1
     return {"message":message, "recommend":False}
-    
 
         
 if __name__ == '__main__':
